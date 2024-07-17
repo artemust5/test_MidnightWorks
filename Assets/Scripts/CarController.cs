@@ -1,21 +1,26 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using TMPro;
 
 public class CarController : MonoBehaviour
 {
-    public enum ControlMode
-    {
-        Keyboard,
-        Buttons
-    };
-
+    [SerializeField] private FloatingJoystick _floatingJoystick;
     public enum Axel
     {
         Front,
         Rear
     }
+    private int _speed = 600;
 
+    public int speed
+    {
+        get { return _speed; }
+        set
+        {
+            _speed = value;
+        }
+    }
     [Serializable]
     public struct Wheel
     {
@@ -26,23 +31,19 @@ public class CarController : MonoBehaviour
         public Axel axel;
     }
 
-    public ControlMode control;
+    [SerializeField] private float maxAcceleration = 30.0f;
 
-    public float maxAcceleration = 30.0f;
-    public float brakeAcceleration = 50.0f;
+    [SerializeField] private float turnSensitivity = 1.0f;
+    [SerializeField] private float maxSteerAngle = 30.0f;
 
-    public float turnSensitivity = 1.0f;
-    public float maxSteerAngle = 30.0f;
-
-    public Vector3 _centerOfMass;
+    [SerializeField] private Vector3 _centerOfMass;
 
     public List<Wheel> wheels;
 
     float moveInput;
-    float steerInput;
+    [HideInInspector] public float steerInput;
 
-    private Rigidbody carRb;
-
+    public Rigidbody carRb;
 
     void Start()
     {
@@ -61,7 +62,6 @@ public class CarController : MonoBehaviour
     {
         Move();
         Steer();
-        Brake();
     }
 
     public void MoveInput(float input)
@@ -76,18 +76,15 @@ public class CarController : MonoBehaviour
 
     void GetInputs()
     {
-        if (control == ControlMode.Keyboard)
-        {
-            moveInput = Input.GetAxis("Vertical");
-            steerInput = Input.GetAxis("Horizontal");
-        }
+        moveInput = _floatingJoystick.Vertical;
+        steerInput = _floatingJoystick.Horizontal;
     }
 
     void Move()
     {
         foreach (var wheel in wheels)
         {
-            wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * Time.deltaTime;
+            wheel.wheelCollider.motorTorque = moveInput * _speed * maxAcceleration * Time.deltaTime;
         }
     }
 
@@ -99,24 +96,6 @@ public class CarController : MonoBehaviour
             {
                 var _steerAngle = steerInput * turnSensitivity * maxSteerAngle;
                 wheel.wheelCollider.steerAngle = Mathf.Lerp(wheel.wheelCollider.steerAngle, _steerAngle, 0.6f);
-            }
-        }
-    }
-
-    void Brake()
-    {
-        if (Input.GetKey(KeyCode.Space) || moveInput == 0)
-        {
-            foreach (var wheel in wheels)
-            {
-                wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
-            }
-        }
-        else
-        {
-            foreach (var wheel in wheels)
-            {
-                wheel.wheelCollider.brakeTorque = 0;
             }
         }
     }
@@ -137,9 +116,7 @@ public class CarController : MonoBehaviour
     {
         foreach (var wheel in wheels)
         {
-            //var dirtParticleMainSettings = wheel.smokeParticle.main;
-
-            if (Input.GetKey(KeyCode.Space) && wheel.axel == Axel.Rear && wheel.wheelCollider.isGrounded == true && carRb.velocity.magnitude >= 10.0f)
+            if (wheel.axel == Axel.Rear && wheel.wheelCollider.isGrounded == true && carRb.velocity.magnitude >= 15.0f)
             {
                 wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>().emitting = true;
                 wheel.smokeParticle.Emit(1);

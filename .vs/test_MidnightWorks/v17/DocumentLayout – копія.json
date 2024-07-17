@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\artem\\Documents\\GameDev\\test_MidnightWorks\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE51758-2B00-4B77-2A1A-DE44F0BF1FD2}|Assembly-CSharp.csproj|c:\\users\\artem\\documents\\gamedev\\test_midnightworks\\assets\\scripts\\leveltimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE51758-2B00-4B77-2A1A-DE44F0BF1FD2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\leveltimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE51758-2B00-4B77-2A1A-DE44F0BF1FD2}|Assembly-CSharp.csproj|c:\\users\\artem\\documents\\gamedev\\test_midnightworks\\assets\\scripts\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE51758-2B00-4B77-2A1A-DE44F0BF1FD2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE51758-2B00-4B77-2A1A-DE44F0BF1FD2}|Assembly-CSharp.csproj|C:\\Users\\artem\\Documents\\GameDev\\test_MidnightWorks\\assets\\scripts\\driftscoring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE51758-2B00-4B77-2A1A-DE44F0BF1FD2}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\driftscoring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LevelTimer.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\Documents\\GameDev\\test_MidnightWorks\\Assets\\Scripts\\LevelTimer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LevelTimer.cs",
+              "ToolTip": "C:\\Users\\artem\\Documents\\GameDev\\test_MidnightWorks\\Assets\\Scripts\\LevelTimer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LevelTimer.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwB0AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T13:43:00.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DriftScoring.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\Documents\\GameDev\\test_MidnightWorks\\Assets\\Scripts\\DriftScoring.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DriftScoring.cs",
+              "ToolTip": "C:\\Users\\artem\\Documents\\GameDev\\test_MidnightWorks\\Assets\\Scripts\\DriftScoring.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DriftScoring.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T13:10:03.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarController.cs",
+              "DocumentMoniker": "C:\\Users\\artem\\Documents\\GameDev\\test_MidnightWorks\\Assets\\Scripts\\CarController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CarController.cs",
+              "ToolTip": "C:\\Users\\artem\\Documents\\GameDev\\test_MidnightWorks\\Assets\\Scripts\\CarController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CarController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-17T10:58:01.35Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
