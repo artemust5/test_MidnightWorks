@@ -38,6 +38,9 @@ public class ObjectSwitcher : MonoBehaviour
         {
             _sceneTransition.sceneNumber = index;
         }
-        levelText.text = "LEVEL " + (index+1).ToString("F0");
+        if (levelText != null)
+        {
+            levelText.text = "LEVEL " + (index + 1).ToString("F0");
+        }
     }
 }

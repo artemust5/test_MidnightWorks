@@ -2,10 +2,12 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using TMPro;
+using Photon.Pun;
 
 public class CarController : MonoBehaviour
 {
     [SerializeField] private FloatingJoystick _floatingJoystick;
+    PhotonView view;
     public enum Axel
     {
         Front,
@@ -49,6 +51,7 @@ public class CarController : MonoBehaviour
     {
         carRb = GetComponent<Rigidbody>();
         carRb.centerOfMass = _centerOfMass;
+        view = GetComponent<PhotonView>();
     }
 
     void Update()
@@ -60,8 +63,11 @@ public class CarController : MonoBehaviour
 
     void LateUpdate()
     {
-        Move();
-        Steer();
+        //if (view.IsMine)
+        //{
+            Move();
+            Steer();
+        //}
     }
 
     public void MoveInput(float input)
@@ -116,7 +122,7 @@ public class CarController : MonoBehaviour
     {
         foreach (var wheel in wheels)
         {
-            if (wheel.axel == Axel.Rear && wheel.wheelCollider.isGrounded == true && carRb.velocity.magnitude >= 15.0f)
+            if (wheel.axel == Axel.Rear && wheel.wheelCollider.isGrounded == true && carRb.velocity.magnitude >= 10.0f)
             {
                 wheel.wheelEffectObj.GetComponentInChildren<TrailRenderer>().emitting = true;
                 wheel.smokeParticle.Emit(1);
